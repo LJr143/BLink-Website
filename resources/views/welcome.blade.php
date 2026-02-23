@@ -80,8 +80,18 @@
             </div>
         </section>
 
-
-
+        {{-- Story Section --}}
+        <section class="story-container">
+            <div class="story-card left-story">
+                <div class="story-info">
+                    <h2 class="title">Our Story</h2>
+                    <p class="sub-title">The Journey of the Perfect MD2 Pineapple, From Our Family to Yours.</p>
+                </div>
+            </div>
+            <div class="story-card right-story">
+                <a href="#" class="btn-learn-about">LEARN MORE ABOUT US</a>
+            </div>
+        </section>
     </main>
 
 </body>

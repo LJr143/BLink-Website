@@ -203,7 +203,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 100px 0px;
+    margin-top: 100px;
 }
 
 .services-left-card {
@@ -234,4 +234,57 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: #ffffff 1px solid;
     position: relative;
+}
+
+/* Story Serction */
+.story-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-card {
+    border-radius: 20px;
+    height: 420px;
+    width: 800px;
+    margin-bottom: 30px;
+    margin-left: 170px;
+    position: relative;
+}
+
+.story-info h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.right-story {
+    background-color: #faf3da;
+    border-radius: 20px;
+    height: 420px;
+    width: 1000px;
+    margin-right: 200px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.btn-learn-about {
+    background-color: #E2AD1C;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 14px 24px;
+    margin: 20px;
+    border: none;
+    text-decoration: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.btn-learn-about:hover {
+    background-color: #b8860b; 
 }
