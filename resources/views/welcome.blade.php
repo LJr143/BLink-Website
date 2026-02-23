@@ -92,6 +92,47 @@
                 <a href="#" class="btn-learn-about">LEARN MORE ABOUT US</a>
             </div>
         </section>
+
+        {{-- Testimonials Seciton --}}
+        <section class="testimonials-section">
+            <div class="section-title">What our client’s Say</div>
+            <div class="section-subtitle">Trusted by businesses across the globe.</div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>“Blink Philippines understands the Dubai market perfectly. Their ‘zero color’ specification is
+                        always on point, and the quality of their MD2s is consistently excellent. A reliable partner for
+                        our business.”</p>
+                    <div class="client-info">— Importer, Al Aweer Market, America</div>
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“We’ve worked with several suppliers, but the attention to detail from Blink Philippines
+                        regarding grading and packing is unmatched. It makes our job easier knowing the product will
+                        arrive in perfect condition.”</p>
+                    <div class="client-info">— Fresh Produce Co, Japan</div>
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“Blink Philippines understands the Dubai market perfectly. Their ‘zero color’ specification is
+                        always on point, and the quality of their MD2s is consistently excellent. A reliable partner for
+                        our business.”</p>
+                    <div class="client-info">— Importer, Aweer Market, Dubai</div>
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>“Blink Philippines understands the Dubai market perfectly. Their ‘zero color’ specification is
+                        always on point, and the quality of their MD2s is consistently excellent. A reliable partner for
+                        our business.”</p>
+                    <div class="client-info">— Importer, Aweer Market, Philippines</div>
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
 </body>
