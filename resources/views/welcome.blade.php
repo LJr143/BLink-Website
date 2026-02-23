@@ -189,6 +189,49 @@
         </section>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-cta">
+                <h2 class="footer-heading">Let's Talk</h2>
+                <p class="footer-description">Ready to export the finest pineapples? Get in touch with us today.</p>
+                <a href="#" class="btn-footer-contact">CONTACT US</a>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-subheading">Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3 class="footer-subheading">Contact Info</h3>
+                <div class="contact-item">
+                    <span class="icon">✉</span>
+                    <p>blinkphil@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <p>(082) 228 - 6428</p>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <p>Unit 205 Oroderm City Strip Mall C.M<br>
+                        Recto St. Davao City, Davao del Sur 8000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p>&copy; 2026 Blink Philippines International OPC. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
