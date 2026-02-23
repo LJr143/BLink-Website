@@ -197,3 +197,41 @@ body {
 .btn-view-all:hover {
     background-color: #ececec;
 }
+
+/* Services Section */
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0px;
+}
+
+.services-left-card {
+    background-color: #f6d875;
+    border-radius: 20px;
+    height: 420px;
+    width: 980px;
+    margin-right: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: #ffffff 1px solid;
+    position: relative;
+}
+
+.services-info {
+    margin: 20px 30px;
+    font-weight: bold;
+}
+
+.services-info .title {
+    margin-bottom: 5px;
+}
+
+.services-right-card {
+    background-color: #f6d875;
+    border-radius: 20px;
+    height: 420px;
+    width: 550px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: #ffffff 1px solid;
+    position: relative;
+}

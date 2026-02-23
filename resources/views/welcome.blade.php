@@ -48,7 +48,6 @@
         <section class="products-section">
             <h2 class="section-title">Our Products</h2>
             <p class="section-subtitle">Discover our range of premium pineapple varieties.</p>
-
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-info">
@@ -64,14 +63,19 @@
                     <a href="#" class="btn-view-all">View All Products</a>
                 </div>
             </div>
+
+            {{-- Services Section --}}
             <div class="services-container">
                 <div class="services-left-card">
-                    <h3 class="title">Our Export Services</h3>
-                    <p class="sub-title">From the farms of South Cotabato to the markets of Dubai—we manage the chain so
-                        you don't have to.</p>
+                    <div class="services-info">
+                        <h2 class="title">Our Export Services</h2>
+                        <p class="sub-title">From the farms of South Cotabato to the markets of Dubai—we manage the
+                            chain so
+                            you don't have to.</p>
+                    </div>
                 </div>
                 <div class="services-right-card">
-                    <p class="sub-title">Lorem ipsum dolor sit amet consectetur</p>
+                    <p class="sub-title"></p>
                 </div>
             </div>
         </section>
