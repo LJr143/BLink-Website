@@ -41,7 +41,6 @@ h3 {
     padding: 0 20px;
 }
 
-/* Hero Section Styling - Responsive */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -56,8 +55,8 @@ h3 {
 .logo img {
     width: clamp(45px, 8vw, 65px);
     height: auto;
-    image-rendering: crisp-edges;
-    image-rendering: pixelated;
+    background-size: cover;
+    object-fit: cover;
 }
 
 /* Mobile Navigation Toggle */
@@ -118,7 +117,7 @@ h3 {
 
 /* Hero Section */
 .hero {
-    height: clamp(500px, 80vh, 950px);
+    height: clamp(500px, 85vh, 950px);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -290,9 +289,10 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 0px;
     padding: 0 20px;
     margin-bottom: clamp(50px, 8vw, 100px);
+    margin-right: 40px;
 }
 
 .story-card {
@@ -304,7 +304,8 @@ h3 {
 
 .left-story {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
+    
 }
 
 .right-story {
@@ -312,7 +313,7 @@ h3 {
     border-radius: 20px;
     height: clamp(300px, 45vw, 420px);
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: flex-end;
