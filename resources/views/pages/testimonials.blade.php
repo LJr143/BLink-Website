@@ -10,12 +10,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
     rel="stylesheet">
-
   @vite(['resources/css/app.css', 'resources/css/testimonial-page.css'])
 </head>
 
 <body>
-
   <nav class="navbar">
     <div class="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></div>
     <ul class="nav-menu">

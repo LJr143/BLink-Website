@@ -10,32 +10,39 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ asset('images/logo.png') }}" alt="BLink Logo">
+        </div>
+
+        {{-- Navigation --}}
+        <ul class="nav-menu">
+            <li><a href="{{ route('home') }}" class="active">HOME</a></li>
+            <li><a href="{{ route('about') }}">ABOUT</a></li>
+            <li><a href="{{ route('products') }}">PRODUCTS</a></li>
+            <li><a href="{{ route('testimonials') }}">TESTIMONIALS</a></li>
+            <li><a href="{{ route('contact') }}">CONTACT</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#" class="btn-black">GET QUOTE</a>
+        </div>
+    </nav>
 
     <main class="container">
         <section class="hero" style="background-image: url('{{ asset('images/hero-pineapple.png') }}');">
 
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="{{ asset('images/logo.png') }}" alt="BLink Logo">
-                </div>
 
-                {{-- Navigation --}}
-                <ul class="nav-menu">
-                    <li><a href="{{ route('home') }}" class="active">HOME</a></li>
-                    <li><a href="{{ route('about') }}">ABOUT</a></li>
-                    <li><a href="{{ route('products') }}">PRODUCTS</a></li>
-                    <li><a href="{{ route('testimonials') }}">TESTIMONIALS</a></li>
-                    <li><a href="{{ route('contact') }}">CONTACT</a></li>
-                </ul>
-
-                <div class="nav-actions">
-                    <a href="#" class="btn-black">GET QUOTE</a>
-                </div>
-            </nav>
 
             {{-- Hero buttons --}}
             <div class="hero-overlay">
                 <div class="hero-content">
+                    <div class="hero-info">
+                        <h1 class="hero-text">Premium Philippine</h1>
+                        <h1 class="hero-text2">Pineapples</h1>
+                        <p class="sub-text">Export high-grade pineapples from the heart of the Philippines to the
+                            Middle East and beyond.</p>
+                    </div>
                     <div class="hero-buttons">
                         <a href="#" class="btn-yellow">Explore Products</a>
                         <a href="#" class="btn-outline">Request Quote</a>
@@ -48,41 +55,39 @@
         <section class="products-section">
             <h2 class="section-title">Our Products</h2>
             <p class="section-subtitle">Discover our range of premium pineapple varieties.</p>
+
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-info">
-                        <h3>Fresh Pineapple</h3>
-                    </div>
+                    <img src="{{ asset('images/products/product1.png') }}" alt="Fresh Pineapple">
                 </div>
                 <div class="product-card">
-                    <div class="product-info">
-                        <h3>Pineapple Jam</h3>
-                    </div>
+                    <img src="{{ asset('images/products/product2.png') }}" alt="Pineapple Jam">
                 </div>
                 <div class="product-card">
-                    <div class="product-info">
-                        <h3>Pineapple Jam</h3>
-                    </div>
+                    <img src="{{ asset('images/products/product3.png') }}" alt="Pineapple Slices">
                 </div>
                 <div class="product-card view-all-card">
+                    <img src="{{ asset('images/products/product4.png') }}" alt="View All Products Background"
+                        class="card-bg">
                     <a href="#" class="btn-view-all">View All Products</a>
                 </div>
             </div>
+        </section>
 
-            {{-- Services Section --}}
-            <div class="services-container">
-                <div class="services-left-card">
-                    <div class="services-info">
-                        <h2 class="title">Our Export Services</h2>
-                        <p class="sub-title">From the farms of South Cotabato to the markets of Dubai—we manage the
-                            chain so
-                            you don't have to.</p>
-                    </div>
-                </div>
-                <div class="services-right-card">
-                    <p class="sub-title"></p>
+        {{-- Services Section --}}
+        <div class="services-container">
+            <div class="services-left-card">
+                <div class="services-info">
+                    <h2 class="title">Our Export Services</h2>
+                    <p class="sub-title">From the farms of South Cotabato to the markets of Dubai—we manage the
+                        chain so
+                        you don't have to.</p>
                 </div>
             </div>
+            <div class="services-right-card">
+                <p class="sub-title"></p>
+            </div>
+        </div>
         </section>
 
         {{-- Story Section --}}
@@ -205,11 +210,11 @@
             <div class="footer-links">
                 <h3 class="footer-subheading">Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('products') }}">Products</a></li>
+                    <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
 
