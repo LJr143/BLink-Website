@@ -75,21 +75,27 @@
         </section>
 
         {{-- Services Section --}}
-        <div class="services-container">
-            <div class="services-left-card">
-                <div class="services-info">
-                    <h2 class="title">Our Export Services</h2>
-                    <p class="sub-title">From the farms of South Cotabato to the markets of Dubai—we manage the
-                        chain so
-                        you don't have to.</p>
+        <section class="services-section">
+            <div class="services-container">
+                <div class="services-left-card">
+                    <div class="services-info">
+                        <h2 class="title">Our Export Services</h2>
+                        <p class="sub-title">From the farms of South Cotabato to the markets of Dubai—we manage the
+                            chain so you don't have to.</p>
+                    </div>
+                </div>
+
+                <div class="services-right-stack">
+                    <div class="services-image-card">
+                        <img src="{{ asset('images/farmer-with-pineapple.jpg') }}" alt="Export Services">
+                    </div>
+                    <div class="services-logo-card">
+                        <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                        <span>Philippines International OPC</span>
+                    </div>
                 </div>
             </div>
-            <div class="services-right-card">
-                <p class="sub-title"></p>
-            </div>
-        </div>
         </section>
-
         {{-- Story Section --}}
         <section class="story-container">
             <div class="story-card left-story">

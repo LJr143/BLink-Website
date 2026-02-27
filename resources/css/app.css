@@ -212,7 +212,7 @@ h3 {
     background-color: #fdfbf7;
 }
 
-.products-section h2{
+.products-section h2 {
     font-family: Rozha One;
     color: #000;
     font-size: 55px;
@@ -291,50 +291,67 @@ h3 {
     background-color: rgba(255, 255, 255, 0.253);
 }
 
-/* Services Section */
+/*Services Style*/
 .services-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin-top: clamp(50px, 8vw, 100px);
-    gap: clamp(15px, 3vw, 30px);
-    flex-wrap: wrap;
-}
-
-.services-left-card,
-.services-right-card {
-    border-radius: 20px;
-    height: clamp(300px, 45vw, 420px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: #ffffff 1px solid;
-    position: relative;
-    background-color: #f6d875;
+    gap: 20px;
+    padding: 20px;
+    height: 600px;
+    align-items: stretch;
+    margin: 50px;
 }
 
 .services-left-card {
-    width: 100%;
-    max-width: 980px;
-    margin-right: 0;
+    background-color: #fffaf0;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    flex: 2;
+    padding: 40px;
 }
 
-.services-right-card {
-    width: 100%;
-    max-width: 550px;
+.services-right-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 500px;
+    flex: 1.2;
 }
 
-.services-info {
-    margin: 20px 30px;
+.services-image-card {
+    flex: 1; 
+    min-height: 0; 
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.services-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-logo-card {
+    height: 80px; 
+    background-color: #fffaf0;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    gap: 15px;
+    font-size: 25px;
     font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.services-info .title {
-    margin-bottom: 5px;
-    font-size: clamp(20px, 4vw, 28px);
+.services-logo-card span {
+    margin-top: 18px;
 }
 
-.services-info .sub-title {
-    font-size: clamp(14px, 2vw, 16px);
+.services-logo-card img {
+    width: 60px;
 }
 
 /* Story Section */
