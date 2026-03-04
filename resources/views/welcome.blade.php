@@ -103,7 +103,7 @@
 
                         <div class="service-element-item">
                             <div class="element-icon">
-                               <img src="{{ asset('images/home/statistics.png') }}" alt="Logistics Icon">
+                                <img src="{{ asset('images/home/statistics.png') }}" alt="Logistics Icon">
                             </div>
                             <div class="element-content">
                                 <h3>TRADE & DISTRIBUTION SERVICES</h3>
@@ -128,16 +128,24 @@
                 </div>
             </div>
         </section>
+
         {{-- Story Section --}}
-        <section class="story-container">
-            <div class="story-card left-story">
-                <div class="story-info">
-                    <h2 class="title">Our Story</h2>
-                    <p class="sub-title">The Journey of the Perfect MD2 Pineapple, From Our Family to Yours.</p>
+        <section class="story-section-new"
+            style="background-image: url('{{ asset('images/home/storybackground.png') }}');">
+            <div class="story-overlay-card">
+                <div class="story-content-wrapper">
+                    <h2 class="story-title">Our Story</h2>
+                    <p class="story-subtitle">The Journey of the Perfect MD2 Pineapple, From Our Family to Yours.</p>
+
+                    <p class="story-description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+
+                    <div class="story-button-container">
+                        <a href="#" class="btn-learn-more">LEARN MORE ABOUT US</a>
+                    </div>
                 </div>
-            </div>
-            <div class="story-card right-story">
-                <a href="#" class="btn-learn-about">LEARN MORE ABOUT US</a>
             </div>
         </section>
 
