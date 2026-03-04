@@ -27,36 +27,74 @@
   </nav>
 
   <main>
+    {{-- Hero Section --}}
     <section class="hero"
       style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('images/hero-pineapple.png') }}');">
-
-      <h1>Client Testimonials</h1>
-      <p>Hear from our satisfied partners from Dubai Al Aweer Market.</p>
-
+      <div class="hero-text">
+        <h1>Client Testimonials</h1>
+        <p>Hear from our satisfied partners from Dubai Al Aweer Market.</p>
       </div>
     </section>
 
-    <div class="testimonial-overlap-container">
-      <div class="testimonial-grid">
-        @php
-          $reviews = [
-            ['name' => 'Importer, Al Aweer Market, Dubai', 'text' => 'Blink Philippines understands the Dubai market perfectly. Their "zero color" specification is always on point, and the quality of their MD2s is consistently excellent.'],
-            ['name' => 'Procurement Manager, Dubai Fresh Produce Co.', 'text' => 'We\'ve worked with several suppliers, but the attention to detail from Blink Philippines regarding grading is unmatched.'],
-            ['name' => 'Importer, Alweer Market, Dubai', 'text' => 'Blink Philippines understands the Dubai market perfectly. Their "zero color" specification is always on point, and the quality of their MD2s is consistently excellent.'],
-            ['name' => 'Importer, Alweer Market, Dubai', 'text' => 'Blink Philippines understands the Dubai market perfectly. Their "zero color" specification is always on point, and the quality of their MD2s is consistently excellent.']
-          ];
-        @endphp
+    <div class="content-wrapper">
+      {{-- Why Choose Blink Section --}}
+      <section class="why-choose-section">
+        <h2 class="section-heading">Why choose Blink?</h2>
+        <p class="section-subheading">We bring together quality, reliability, and excellence in every shipment.</p>
 
-        @foreach($reviews as $review)
-          <div class="testimonial-card">
-            <p class="quote">“{{ $review['text'] }}”</p>
-            <p class="author">— {{ $review['name'] }}</p>
-            <div class="stars">★★★★★</div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon-placeholder">
+              <img src="{{ asset('images/testimonials/premium.png') }}" alt="Premium Quality Icon">
+            </div>
+            <h3>Premium Quality</h3>
+            <p>Hand-selected pineapples meeting international standards.</p>
           </div>
-        @endforeach
-      </div>
+
+          <div class="feature-card">
+            <div class="icon-placeholder">
+              <img src="{{ asset('images/testimonials/reliable.png') }}" alt="Reliable Export Icon">
+            </div>
+            <h3>Reliable Export</h3>
+            <p>Timely delivery to Middle East and worldwide.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon-placeholder">
+              <img src="{{ asset('images/testimonials/sustainable.png') }}" alt="Sustainable Farming Icon">
+            </div>
+            <h3>Sustainable Farming</h3>
+            <p>Timely delivery to Middle East and worldwide.</p>
+          </div>
+        </div>
+      </section>
+
+      {{-- Client Testimonials Section --}}
+      <section class="testimonials-section">
+        <h2 class="section-heading">Client Testimonials</h2>
+        <p class="section-subheading">Hear from our satisfied partners around Middle East</p>
+
+        <div class="testimonial-grid">
+          @php
+            $reviews = [
+              ['name' => 'Importer, Al Aweer Market, Dubai', 'text' => 'Blink Philippines understands the Dubai market perfectly. Their "zero color" specification is always on point, and the quality of their MD2s is consistently excellent. A reliable partner for our business.'],
+              ['name' => 'Procurement Manager, Dubai Fresh Produce Co.', 'text' => 'We\'ve worked with several suppliers, but the attention to detail from Blink Philippines regarding grading and packing is unmatched. It makes our job easier knowing the product will arrive in perfect condition.'],
+              ['name' => 'Importer, Alweer Market, Dubai', 'text' => 'Blink Philippines understands the Dubai market perfectly. Their "zero color" specification is always on point, and the quality of their MD2s is consistently excellent. A reliable partner for our business.'],
+              ['name' => 'Importer, Alweer Market, Dubai', 'text' => 'Blink Philippines understands the Dubai market perfectly. Their "zero color" specification is always on point, and the quality of their MD2s is consistently excellent. A reliable partner for our business.']
+            ];
+          @endphp
+
+          @foreach($reviews as $review)
+            <div class="testimonial-card">
+              <p class="quote">“{{ $review['text'] }}”</p>
+              <p class="author">— {{ $review['name'] }}</p>
+            </div>
+          @endforeach
+        </div>
+      </section>
     </div>
 
+    {{-- Join CTA --}}
     <section class="join-cta">
       <h2>Join Our Happy Clients</h2>
       <p>Experience the Blink difference. Quality, reliability, and excellence in every shipment.</p>
