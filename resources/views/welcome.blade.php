@@ -7,9 +7,12 @@
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <title>Blink - Home</title>
     @vite(['resources/css/app.css'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+</head>
+
+<body class="admin-mode">
     <nav class="navbar">
         <div class="logo">
             <img src="{{ asset('images/logo.png') }}" alt="BLink Logo">
@@ -58,11 +61,31 @@
 
             <div class="products-layout-wrapper">
                 <div class="product-grid">
+
+                    {{-- ADMIN: Add Product Trigger --}}
+                    <div class="product-card add-card admin-only" onclick="openModal('product', 'add')">
+                        <div class="add-content">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add Product</span>
+                        </div>
+                    </div>
+
+
                     <div class="product-card">
+                        <div class="admin-controls">
+                            <button class="btn-admin edit" onclick="openModal('product', 'edit', 'MD2 Pineapple')"><i
+                                    class="fa-solid fa-pen"></i></button>
+                            <button class="btn-admin delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
                         <img src="{{ asset('images/products/product1.png') }}" alt="MD2 Pineapple">
                         <div class="product-label">MD2 Pineapple (The "Gold Standard")</div>
                     </div>
                     <div class="product-card">
+                        <div class="admin-controls">
+                            <button class="btn-admin edit" onclick="openModal('product', 'edit', 'MD2 Pineapple')"><i
+                                    class="fa-solid fa-pen"></i></button>
+                            <button class="btn-admin delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
                         <img src="{{ asset('images/products/product2.png') }}" alt="MD3 Pineapple">
                         <div class="product-label">MD3 Pineapple (The "Smooth Cayenne")</div>
                     </div>
@@ -155,7 +178,20 @@
             <div class="section-subtitle">Trusted by businesses across the globe.</div>
 
             <div class="testimonials-grid">
+                {{-- ADMIN: Add Testimonial Trigger --}}
+                <div class="testimonial-card add-card admin-only" onclick="openModal('testimonial', 'add')">
+                    <div class="add-content">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Testimonial</span>
+                    </div>
+                </div>
+
                 <div class="testimonial-card">
+                    <div class="admin-controls">
+                        <button class="btn-admin edit" onclick="openModal('testimonial', 'edit')"><i
+                                class="fa-solid fa-pen"></i></button>
+                        <button class="btn-admin delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                     <p>“Blink Philippines understands the Dubai market perfectly. Their ‘zero color’ specification is
                         always on point, and the quality of their MD2s is consistently excellent. A reliable partner for
                         our business.”</p>
@@ -164,6 +200,11 @@
                 </div>
 
                 <div class="testimonial-card">
+                    <div class="admin-controls">
+                        <button class="btn-admin edit" onclick="openModal('testimonial', 'edit')"><i
+                                class="fa-solid fa-pen"></i></button>
+                        <button class="btn-admin delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                     <p>“We’ve worked with several suppliers, but the attention to detail from Blink Philippines
                         regarding grading and packing is unmatched. It makes our job easier knowing the product will
                         arrive in perfect condition.”</p>
@@ -172,6 +213,11 @@
                 </div>
 
                 <div class="testimonial-card">
+                    <div class="admin-controls">
+                        <button class="btn-admin edit" onclick="openModal('testimonial', 'edit')"><i
+                                class="fa-solid fa-pen"></i></button>
+                        <button class="btn-admin delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                     <p>“Blink Philippines understands the Dubai market perfectly. Their ‘zero color’ specification is
                         always on point, and the quality of their MD2s is consistently excellent. A reliable partner for
                         our business.”</p>
@@ -180,6 +226,11 @@
                 </div>
 
                 <div class="testimonial-card">
+                    <div class="admin-controls">
+                        <button class="btn-admin edit" onclick="openModal('testimonial', 'edit')"><i
+                                class="fa-solid fa-pen"></i></button>
+                        <button class="btn-admin delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                     <p>“Blink Philippines understands the Dubai market perfectly. Their ‘zero color’ specification is
                         always on point, and the quality of their MD2s is consistently excellent. A reliable partner for
                         our business.”</p>
@@ -288,6 +339,75 @@
         </div>
     </footer>
 
+    <script>
+        function openModal(type, action, name = "") {
+            const modal = document.getElementById('adminModal');
+            const title = document.getElementById('modalTitle');
+            const prodFields = document.getElementById('productFields');
+            const testFields = document.getElementById('testimonialFields');
+
+            modal.style.display = 'flex';
+
+            if (type === 'product') {
+                title.innerText = (action === 'add') ? "Add New Product" : "Edit Product";
+                prodFields.style.display = 'block';
+                testFields.style.display = 'none';
+                document.getElementById('prodName').value = name;
+            } else {
+                title.innerText = (action === 'add') ? "Add New Testimonial" : "Edit Testimonial";
+                prodFields.style.display = 'none';
+                testFields.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('adminModal').style.display = 'none';
+        }
+    </script>
+
+    <div id="adminModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Edit Details</h3>
+                <button class="close-x" onclick="closeModal()">&times;</button>
+            </div>
+
+            <div id="productFields">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="prodName" placeholder="e.g. MD2 Pineapple">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="prodDesc" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Product Image</label>
+                    <input type="file" class="file-input">
+                </div>
+            </div>
+
+            <div id="testimonialFields" style="display:none;">
+                <div class="form-group">
+                    <label>Client Feedback</label>
+                    <textarea id="testText" rows="4" placeholder="Enter their quote..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Client Name & Location</label>
+                    <input type="text" id="testClient" placeholder="e.g. Importer, Dubai">
+                </div>
+                <div class="form-group">
+                    <label>Rating (1-5)</label>
+                    <input type="number" id="testStars" min="1" max="5" value="5">
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-save" onclick="handleSave()">Save Changes</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

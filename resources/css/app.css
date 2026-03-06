@@ -517,7 +517,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-.story-content-wrapper{
+.story-content-wrapper {
     margin-top: 50px;
 }
 .story-subtitle {
@@ -537,7 +537,7 @@ h3 {
 
 .story-button-container {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     align-items: flex-end;
     margin-top: 100px;
 }
@@ -1016,4 +1016,233 @@ h3 {
     .nav-menu a {
         padding: 8px 12px;
     }
+}
+
+/* Master Toggle */
+.admin-only {
+    display: none;
+}
+body.admin-mode .admin-only {
+    display: flex;
+}
+body.admin-mode .admin-controls {
+    display: flex;
+}
+
+/* Admin Controls Bar */
+.admin-controls {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card,
+.testimonial-card {
+    position: relative;
+}
+
+.btn-admin {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-admin.edit {
+    background: #e2ad1c;
+    color: #000;
+}
+.btn-admin.delete {
+    background: #f4f4f4;
+    color: #ff4444;
+}
+
+/* Add Card Styling */
+.add-card {
+    border: 2px dashed #e2ad1c !important;
+    background: #fffef0 !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    min-height: 250px;
+}
+
+.add-content {
+    text-align: center;
+    color: #e2ad1c;
+}
+.add-content i {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+.add-content span {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* 1. The Background Overlay */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px); /* Blurs the background for a premium feel */
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 2. The Modal Card */
+.modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 3. Header & Typography */
+.modal-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.modal-header h3 {
+    font-family: "Rozha One", serif;
+    font-size: 28px;
+    color: #000;
+    margin: 0;
+}
+
+.close-x {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: #f1f1f1;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-x:hover {
+    background: #e2ad1c;
+    color: #fff;
+}
+
+/* 4. Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e2ad1c;
+    background: #fffef0;
+}
+
+/* 5. Buttons */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.btn-save {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-save:hover {
+    background: #e2ad1c;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(226, 173, 28, 0.3);
+}
+
+/* Custom File Upload Button Styling */
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.file-input {
+    font-size: 13px;
+    color: #666;
 }

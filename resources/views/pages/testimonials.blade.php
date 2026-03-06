@@ -29,7 +29,7 @@
   <main>
     {{-- Hero Section --}}
     <section class="hero"
-      style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('images/hero-pineapple.png') }}');">
+      style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('images/testimonials/heroimage.png') }}');">
       <div class="hero-text">
         <h1>Client Testimonials</h1>
         <p>Hear from our satisfied partners from Dubai Al Aweer Market.</p>

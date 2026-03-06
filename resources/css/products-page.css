@@ -45,7 +45,7 @@
 
 /* 2. Variety Intro */
 .variety-intro {
-    padding-left: 120px; 
+    padding-left: 120px;
     padding-top: 80px;
 }
 
@@ -82,6 +82,172 @@
     box-shadow: 0 0px 30px rgba(0, 0, 0, 0.3);
     position: relative;
     width: 100%;
+}
+
+/* Styling for the Add New Product Card */
+.admin-add-item {
+    display: none;
+}
+
+body.admin-mode .admin-add-item {
+    display: block;
+}
+
+.add-card {
+    border: 2px dashed #ccc;
+    background: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.add-card:hover {
+    border-color: #e2ad1c;
+    background: #fff;
+}
+
+.add-content {
+    text-align: center;
+    color: #888;
+}
+
+.add-content i {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-content span {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Modal Grouping */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.file-input {
+    border: none !important;
+    padding: 5px 0 !important;
+}
+
+.admin-controls {
+    display: none; 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 110;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.admin-mode .admin-controls {
+    display: flex;
+}
+
+.btn-admin {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific Colors */
+.btn-admin.edit {
+    background-color: #e2ad1c; 
+    color: #000;
+}
+
+.btn-admin.delete {
+    background-color: #f8f9fa; 
+    color: #ff4444;
+}
+
+/* Hover Effects */
+.btn-admin:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-admin.edit:hover {
+    background-color: #000;
+    color: #e2ad1c;
+}
+
+.btn-admin.delete:hover {
+    background-color: #ff4444;
+    color: #fff;
+}
+
+/* Add Card Styling (The dashed card) */
+.add-card {
+    height: 600px;
+    border: 3px dashed #e2ad1c;
+    background: #fffef0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.add-card:hover {
+    background: #fdfae8;
+    transform: translateY(-5px);
+}
+
+.add-content i {
+    font-size: 50px;
+    color: #e2ad1c;
+    margin-bottom: 15px;
+}
+
+.add-content span {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+.btn-save {
+    background: #000;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-save:hover {
+    background: #e2ad1c;
+    color: #000;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #666;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 15px;
 }
 
 .card-inner {
@@ -127,7 +293,6 @@
     transform: scale(1) rotate(10deg);
 }
 
-
 .prod-caption {
     font-weight: 700;
     font-size: 16px;
@@ -136,7 +301,6 @@
     text-align: center;
 }
 
-/* Description text below the white card */
 .prod-description {
     margin-top: 40px;
     font-size: 18px;
@@ -147,7 +311,6 @@
     padding: 0 30px;
 }
 
-/* 4. Interested CTA (Centered like the mockup) */
 .quote-cta-section {
     background-color: #fdfbe9;
     padding: 100px 20px;
@@ -167,7 +330,57 @@
     color: #fff;
     padding: 18px 50px;
     text-decoration: none;
-    border-radius: 8px; /* Slightly squarer button from picture */
+    border-radius: 8px;
     font-weight: bold;
+    margin-top: 30px;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 450px;
+    font-family: "Inter", sans-serif;
+}
+
+.modal-content h3 {
+    font-family: "Rozha One", serif;
+    font-size: 24px;
+}
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
     margin-top: 30px;
 }

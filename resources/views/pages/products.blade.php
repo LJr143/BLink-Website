@@ -9,9 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Rozha+One&display=swap"
     rel="stylesheet">
   @vite(['resources/css/app.css', 'resources/css/products-page.css'])
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="products-page-body">
+<body class="products-page-body ">
   <nav class="navbar">
     <div class="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></div>
     <ul class="nav-menu">
@@ -44,9 +45,22 @@
 
     {{-- 3. Product Display Grid --}}
     <section class="products-display-grid">
+      <div class="product-item admin-add-item">
+        <div class="product-card add-card" onclick="openProductModal('add')">
+          <div class="add-content">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add New Product</span>
+          </div>
+        </div>
+      </div>
 
       <div class="product-item">
         <div class="product-card">
+          <div class="admin-controls">
+            <button class="btn-admin edit" onclick="openProductModal()"><i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="btn-admin delete"><i class="fa-solid fa-trash"></i> </button>
+          </div>
           <div class="card-inner">
             <span class="corner-icon">📐</span>
             <img src="{{ asset('images/products/product1.png') }}" alt="MD2 Pineapple" class="prod-img">
@@ -58,10 +72,14 @@
           Export High grade Pineapples from the heart of the philippines to the middle east countries etc
         </div>
       </div>
-      <img src="{{ asset('images/products/decor1.png') }}" alt="decor" class="sticker-decor decor2">
-
+    
       <div class="product-item">
         <div class="product-card">
+          <div class="admin-controls">
+            <button class="btn-admin edit" onclick="openProductModal()"><i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="btn-admin delete"><i class="fa-solid fa-trash"></i> </button>
+          </div>
           <div class="card-inner">
             <span class="corner-icon">📐</span>
             <img src="{{ asset('images/products/product4.png') }}" alt="MD3 Pineapple" class="prod-img">
@@ -73,7 +91,7 @@
           Export High grade Pineapples from the heart of the philippines to the middle east countries etc
         </div>
       </div>
-      <img src="{{ asset('images/products/decor2.png') }}" alt="decor" class="sticker-decor decor1">
+
 
     </section>
 
@@ -126,6 +144,67 @@
       <p>&copy; 2026 Blink Philippines International OPC. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function openProductModal() {
+      document.getElementById('adminModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('adminModal').style.display = 'none';
+    }
+    window.onclick = function (event) {
+      let modal = document.getElementById('adminModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
 </body>
+
+<div id="adminModal" class="modal-overlay">
+  <div class="modal-content">
+    <h3 id="modalTitle">Edit Product Details</h3>
+
+    <div class="form-group">
+      <label>Product Name</label>
+      <input type="text" id="prodName" placeholder="Enter product name">
+    </div>
+
+    <div class="form-group">
+      <label>Product Description</label>
+      <textarea id="prodDesc" rows="3" placeholder="Enter description..."
+        style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Product Image</label>
+      <input type="file" accept="image/*" class="file-input">
+      <small style="color: #666; font-size: 11px;">Select a high-quality PNG or JPG</small>
+    </div>
+
+    <div class="decor-settings">
+      <h4>Decor Sticker Controls</h4>
+      <div class="input-row">
+        <div>
+          <label>Sticker Width (px)</label>
+          <input type="number" value="120">
+        </div>
+        <div>
+          <label>Sticker Height Offset (px)</label>
+          <input type="number" value="-20">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" id="saveBtn">Save Product</button>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
 
 </html>
