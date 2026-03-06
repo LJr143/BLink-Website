@@ -3,16 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blink - Our Products</title>
-  <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Rozha+One&display=swap"
     rel="stylesheet">
   @vite(['resources/css/app.css', 'resources/css/products-page.css'])
 </head>
 
-<body>
-  {{-- Navbar placeholder --}}
+<body class="products-page-body">
   <nav class="navbar">
     <div class="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></div>
     <ul class="nav-menu">
@@ -26,42 +25,59 @@
   </nav>
 
   <main>
-    <section class="hero"
+    {{-- 1. Hero Section --}}
+    <section class="products-hero"
       style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('images/hero-pineapple.png') }}');">
-      <h1>Our Products</h1>
-      <p>Premium pineapple varieties for international export</p>
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Our Products</h1>
+          <p>Premium pineapple varieties for international export</p>
+        </div>
       </div>
     </section>
 
-    <section class="product-listing-container">
-
-      <div class="product-row">
-        <div class="product-image-wrapper">
-          <img src="{{ asset('images/products/product1.png') }}" alt="MD2 Pineapple" class="main-product-img">
-          <img src="{{ asset('images/products/decor1.png') }}" alt="decor" class="sticker-garnish garnish-left">
-          <div class="img-caption">MD2 Pineapple (The "Gold Standard")</div>
-        </div>
-        <div class="product-text">
-          <p>Export High grade Pineapples from the heart of the philippines to the middle east countries etc</p>
-        </div>
-      </div>
-
-      <div class="product-row row-reverse">
-        <div class="product-image-wrapper">
-          <img src="{{ asset('images/products/product4.png') }}" alt="MD3 Pineapple" class="main-product-img">
-          <img src="{{ asset('images/products/decor2.png') }}" alt="decor" class="sticker-garnish garnish-right">
-          <div class="img-caption">MD3 Pineapple (The "Smooth Cayenne")</div>
-        </div>
-        <div class="product-text">
-          <p>Export High grade Pineapples from the heart of the philippines to the middle east countries etc</p>
-        </div>
-      </div>
-
-      <div class="center-btn-wrapper">
-        <a href="#" class="btn-view-all">View All Products <span class="arrow">→</span></a>
-      </div>
+    {{-- 2. Section Heading --}}
+    <section class="variety-intro">
+      <h2 class="section-heading">Explore our Pineapple Varieties</h2>
+      <p class="section-subheading">Explore the Spectrum of Pineapple Perfection.</p>
     </section>
 
+    {{-- 3. Product Display Grid --}}
+    <section class="products-display-grid">
+
+      <div class="product-item">
+        <div class="product-card">
+          <div class="card-inner">
+            <span class="corner-icon">📐</span>
+            <img src="{{ asset('images/products/product1.png') }}" alt="MD2 Pineapple" class="prod-img">
+
+            <div class="prod-caption">MD2 Pineapple (The "Gold Standard")</div>
+          </div>
+        </div>
+        <div class="prod-description">
+          Export High grade Pineapples from the heart of the philippines to the middle east countries etc
+        </div>
+      </div>
+      <img src="{{ asset('images/products/decor1.png') }}" alt="decor" class="sticker-decor decor2">
+
+      <div class="product-item">
+        <div class="product-card">
+          <div class="card-inner">
+            <span class="corner-icon">📐</span>
+            <img src="{{ asset('images/products/product4.png') }}" alt="MD3 Pineapple" class="prod-img">
+            <div class="prod-caption">MD3 Pineapple (The "Smooth Cayenne")</div>
+          </div>
+
+        </div>
+        <div class="prod-description">
+          Export High grade Pineapples from the heart of the philippines to the middle east countries etc
+        </div>
+      </div>
+      <img src="{{ asset('images/products/decor2.png') }}" alt="decor" class="sticker-decor decor1">
+
+    </section>
+
+    {{-- 4. CTA Section --}}
     <section class="quote-cta-section">
       <h2>Interested in Our Products?</h2>
       <p>Contact us today to discuss bulk orders and export requirements.</p>
@@ -110,7 +126,6 @@
       <p>&copy; 2026 Blink Philippines International OPC. All rights reserved.</p>
     </div>
   </footer>
-
 </body>
 
 </html>
