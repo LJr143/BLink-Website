@@ -13,22 +13,29 @@ body {
 }
 
 .contact-hero {
-    height: clamp(500px, 80vh, 900px);
+    height: 60vh;
+    min-height: 800px;
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
     position: relative;
+    flex-direction: column;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .contact-hero h1 {
-    font-size: 3rem;
-    text-decoration: underline #e2ad1c;
+    font-size: clamp(2.5rem, 5vw, 6rem);
     margin-bottom: 10px;
+}
+
+.contact-hero p {
+    font-size: 1.3rem;
+    font-weight: 400;
 }
 
 .contact-main-grid {
@@ -120,7 +127,7 @@ body {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 25px;
+    border-radius: 5px;
     outline: none;
 }
 

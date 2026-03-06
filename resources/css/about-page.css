@@ -1,0 +1,170 @@
+.about-page-body {
+    background-color: #f1f3f5;
+}
+
+.about-hero {
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.hero-blur-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.hero-left-content h1 {
+    font-family: "Ramaraja";
+    font-size: 72px;
+    color: #fff;
+    margin: 0;
+}
+
+.hero-left-content p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.fixed-alignment-wrapper {
+    width: 100%;
+    padding: 80px 120px;
+}
+
+.section-heading {
+    font-family: "Ramaraja", serif;
+    font-size: 47px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.intro-box {
+    margin-left: 50px;
+}
+
+.intro-box h3 {
+    font-size: 30px;
+}
+
+.about-intro-section {
+    margin-bottom: 500px;
+}
+
+.section-subheading {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* 3. Mission & Vision Grid - Left Aligned */
+.mission-vision-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 500px 500px;
+    gap: 30px;
+    margin: 200px 0;
+}
+
+.info-card {
+    background-color: #fdfbe9;
+    padding: 30px;
+    width: 480px;
+    height: 250px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.card-icon img {
+    width: 60px; 
+    margin-bottom: 10px; 
+}
+
+.card-text h3 {
+    font-family:
+        "Ramaraja", serif; 
+    font-size: 32px; 
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.card-text p {
+    font-size: 14px; /* Smaller, cleaner body text */
+    line-height: 1.4;
+    color: #333;
+    max-width: 90%; /* Keeps text from hitting the edge */
+}
+
+.member-grid,
+.farm-grid,
+.cert-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 60px;
+    padding-right: 40px;
+}
+
+.member-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+.farm-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+.cert-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.placeholder-box {
+    background-color: #fdfbe9;
+    height: 300px;
+    border-radius: 12px;
+    border: 1px solid #e2ad1c22;
+}
+
+.placeholder-box.large {
+    height: 480px;
+}
+
+/* 5. Interested CTA */
+.interest-cta {
+    background-color: #fdfbe9;
+    text-align: center;
+    padding: 100px 20px;
+    width: 100%;
+}
+
+.interest-cta h2 {
+    font-family: "Rozha One", serif;
+    font-size: 40px;
+}
+
+.btn-black-caps {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 16px 45px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.btn-black-caps:hover {
+    background: #333;
+}
