@@ -12,6 +12,7 @@ Route::view('/about', 'pages.about')->name('about');
 Route::view('/products', 'pages.products')->name('products');
 Route::view('/testimonials', 'pages.testimonials')->name('testimonials');
 Route::view('/contact', 'pages.contact')->name('contact');
+Route::view('/admin', 'pages.admin')->name('admin');
 
 // Keep your existing dashboard/settings routes below
 Route::view('dashboard', 'dashboard')

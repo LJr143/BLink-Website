@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="admin-mode">
+<body >
     <nav class="navbar">
         <div class="logo">
             <img src="{{ asset('images/logo.png') }}" alt="BLink Logo">
