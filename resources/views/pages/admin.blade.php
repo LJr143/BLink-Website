@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blink - Admin Login</title>
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+
     @vite(['resources/css/app.css', 'resources/css/admin-page.css'])
 </head>
-<body>
 
+<body>
     <nav class="admin-nav">
         <div class="logo">
             <img src="{{ asset('images/logo.png') }}" alt="Blink Logo">
         </div>
-        <a href="{{ route('home') }}" class="btn-view-site">View Site</a>
+        <div class="nav-right">
+            <ul class="admin-menu" id="adminMenu">
+                <li><a href="{{ route('home') }}">HOME</a></li>
+                <li><a href="{{ route('about') }}">ABOUT</a></li>
+                <li><a href="{{ route('products') }}">PRODUCTS</a></li>
+                <li><a href="{{ route('testimonials') }}">TESTIMONIALS</a></li>
+                <li><a href="{{ route('contact') }}">CONTACT</a></li>
+            </ul>
+            <a href="{{ route('home') }}" class="btn-view-site">View Site</a>
+            <div class="admin-hamburger" id="adminHamburger" onclick="toggleAdminMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
     </nav>
 
-    <main class="login-hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ asset('images/hero-pineapple.png') }}');">
+    <main class="login-hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ asset('images/hero-pineapple.png') }}');">
         <div class="login-container">
-            
             <div class="login-welcome">
                 <h3>Hello, Admin! Ready to Grow?</h3>
                 <p class="subtitle">Let's Keep Things Fresh.</p>
                 <h1>Premium Philippine <span>Pineapples</span></h1>
-                <p class="description">Export high-grade pineapples from the heart of the Philippines to the Middle East and beyond!</p>
+                <p class="description">Export high-grade pineapples from the heart of the Philippines to the Middle East
+                    and beyond!</p>
             </div>
 
             <div class="login-card">
@@ -47,7 +63,6 @@
                     <button type="submit" class="btn-signin">SIGN IN</button>
                 </form>
             </div>
-
         </div>
     </main>
 
@@ -72,9 +87,15 @@
 
             <div class="footer-contact">
                 <h3 class="footer-subheading">Contact Info</h3>
-                <div class="contact-item"><span>✉</span><p>blinkphil@gmail.com</p></div>
-                <div class="contact-item"><span>📞</span><p>(082) 228 - 6428</p></div>
-                <div class="contact-item"><span>📍</span><p>Unit 205 Oroderm City Strip Mall C.M Recto St. Davao City</p></div>
+                <div class="contact-item"><span class="icon">✉</span>
+                    <p>blinkphil@gmail.com</p>
+                </div>
+                <div class="contact-item"><span class="icon">📞</span>
+                    <p>(082) 228 - 6428</p>
+                </div>
+                <div class="contact-item"><span class="icon">📍</span>
+                    <p>Unit 205 Oroderm City Strip Mall C.M Recto St. Davao City</p>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -83,5 +104,11 @@
         </div>
     </footer>
 
+    <script>
+        function toggleAdminMenu() {
+            document.getElementById('adminMenu').classList.toggle('active');
+        }
+    </script>
 </body>
+
 </html>
