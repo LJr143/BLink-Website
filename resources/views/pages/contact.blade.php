@@ -10,10 +10,9 @@
 </head>
 
 <body>
-
   <nav class="navbar">
     <div class="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></div>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="{{ route('home') }}">HOME</a></li>
       <li><a href="{{ route('about') }}">ABOUT</a></li>
       <li><a href="{{ route('products') }}">PRODUCTS</a></li>
@@ -21,6 +20,9 @@
       <li><a href="{{ route('contact') }}" class="active">CONTACT</a></li>
     </ul>
     <div class="nav-actions"><a href="#" class="btn-black">GET QUOTE</a></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
 
   <main>
@@ -31,7 +33,6 @@
     </section>
 
     <div class="contact-main-grid">
-
       <div class="info-section">
         <h2>Contact Information</h2>
         <div class="info-card">
@@ -93,18 +94,16 @@
           <p class="footer-description">Ready to export the finest pineapples? Get in touch with us today.</p>
           <a href="#" class="btn-footer-contact">CONTACT US</a>
         </div>
-
         <div class="footer-links">
           <h3 class="footer-subheading">Quick Links</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('about') }}">About Us</a></li>
+            <li><a href="{{ route('products') }}">Products</a></li>
+            <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-contact">
           <h3 class="footer-subheading">Contact Info</h3>
           <div class="contact-item">
@@ -117,20 +116,20 @@
           </div>
           <div class="contact-item">
             <span class="icon">📍</span>
-            <p>Unit 205 Oroderm City Strip Mall C.M<br>
-              Recto St. Davao City, Davao del Sur 8000</p>
+            <p>Unit 205 Oroderm City Strip Mall C.M<br>Recto St. Davao City, Davao del Sur 8000</p>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <hr class="footer-divider">
         <p>&copy; 2026 Blink Philippines International OPC. All rights reserved.</p>
       </div>
     </footer>
-
   </main>
 
+  <script>
+    function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+  </script>
 </body>
 
 </html>
