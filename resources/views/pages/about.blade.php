@@ -14,7 +14,7 @@
 <body class="about-page-body">
   <nav class="navbar">
     <div class="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></div>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="{{ route('home') }}">HOME</a></li>
       <li><a href="{{ route('about') }}" class="active">ABOUT</a></li>
       <li><a href="{{ route('products') }}">PRODUCTS</a></li>
@@ -22,10 +22,12 @@
       <li><a href="{{ route('contact') }}">CONTACT</a></li>
     </ul>
     <div class="nav-actions"><a href="#" class="btn-black">GET QUOTE</a></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
 
   <main>
-    {{-- 1. Hero Section: Left-aligned content --}}
     <section class="about-hero" style="background-image: url('{{ asset('images/about/aboutpagehero.png') }}');">
       <div class="hero-blur-overlay">
         <div class="hero-left-content">
@@ -36,8 +38,6 @@
     </section>
 
     <div class="fixed-alignment-wrapper">
-
-      {{-- 2. About Blink Intro --}}
       <section class="about-intro-section">
         <h2 class="section-heading">About Blink</h2>
         <div class="intro-box">
@@ -46,22 +46,16 @@
         </div>
       </section>
 
-      {{-- 3. Mission & Vision Cards --}}
       <section class="mission-vision-grid">
         <div class="info-card">
-          <div class="card-icon">
-            <img src="{{ asset('images/about/target-icon.png') }}" alt="Mission">
-          </div>
+          <div class="card-icon"><img src="{{ asset('images/about/target-icon.png') }}" alt="Mission"></div>
           <div class="card-text">
             <h3>Our Mission</h3>
             <p>To deliver the finest Philippine pineapples to the world with uncompromising quality and reliability.</p>
           </div>
         </div>
-
         <div class="info-card">
-          <div class="card-icon">
-            <img src="{{ asset('images/about/diamond-icon.png') }}" alt="Vision">
-          </div>
+          <div class="card-icon"><img src="{{ asset('images/about/diamond-icon.png') }}" alt="Vision"></div>
           <div class="card-text">
             <h3>Our Vision</h3>
             <p>Quality, Trust, Freshness, and Sustainability.</p>
@@ -69,7 +63,6 @@
         </div>
       </section>
 
-      {{-- 4. Team Members --}}
       <section class="grid-display-section">
         <h2 class="section-heading">Our Team Members</h2>
         <p class="section-subheading">The Faces Behind Your Fresh Supply</p>
@@ -81,7 +74,6 @@
         </div>
       </section>
 
-      {{-- 5. Farm Locations --}}
       <section class="grid-display-section">
         <h2 class="section-heading">Farm Locations/Photos</h2>
         <p class="section-subheading">The soil in our pineapples respect everywhere it flourishes</p>
@@ -91,7 +83,6 @@
         </div>
       </section>
 
-      {{-- 6. Certifications --}}
       <section class="grid-display-section">
         <h2 class="section-heading">Certifications and Awards</h2>
         <p class="section-subheading">Product Quality, Officially Certified.</p>
@@ -103,7 +94,6 @@
       </section>
     </div>
 
-    {{-- 7. Interested CTA --}}
     <section class="interest-cta">
       <h2>Interested in Our Products?</h2>
       <p>Deliver excellence to the global trade with premium pineapples.</p>
@@ -118,7 +108,6 @@
         <p class="footer-description">Ready to export the finest pineapples? Get in touch with us today.</p>
         <a href="{{ route('contact') }}" class="btn-footer-contact">CONTACT US</a>
       </div>
-
       <div class="footer-links">
         <h3 class="footer-subheading">Quick Links</h3>
         <ul>
@@ -129,29 +118,28 @@
           <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-contact">
         <h3 class="footer-subheading">Contact Info</h3>
-        <div class="contact-item">
-          <span class="icon">✉</span>
+        <div class="contact-item"><span class="icon">✉</span>
           <p>blinkphil@gmail.com</p>
         </div>
-        <div class="contact-item">
-          <span class="icon">📞</span>
+        <div class="contact-item"><span class="icon">📞</span>
           <p>(082) 228 - 6428</p>
         </div>
-        <div class="contact-item">
-          <span class="icon">📍</span>
+        <div class="contact-item"><span class="icon">📍</span>
           <p>Unit 205 Oroderm City Strip Mall C.M<br>Recto St. Davao City, Davao del Sur 8000</p>
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <hr class="footer-divider">
       <p>&copy; 2026 Blink Philippines International OPC. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+  </script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +13,7 @@ body {
     background-color: #f1f3f5;
 }
 
+/* === navbar (sticky + hamburger) === */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -35,18 +35,17 @@ body {
 }
 .nav-menu {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
     gap: clamp(15px, 3vw, 30px);
     margin-left: auto;
-    flex-wrap: wrap;
+    transition: transform 0.3s ease-in-out;
 }
 .nav-menu a {
     text-decoration: none;
     color: #000;
-    font-weight: 600;
     font-size: clamp(13px, 2vw, 15px);
     white-space: nowrap;
+    font-family: "Rozha One", serif;
 }
 .nav-menu a:hover {
     color: #575757;
@@ -72,9 +71,81 @@ body {
     background-color: #242424;
 }
 
-/* === ABOUT HERO (exact original style, made fluid) === */
+/* hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #000;
+    margin: 4px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+@media (max-width: 1024px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #fdfbe9;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-150%);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+            transform 0.4s ease,
+            opacity 0.3s ease;
+        z-index: 999;
+    }
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+    .nav-menu a {
+        font-size: 20px;
+        white-space: normal;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-actions {
+        margin-left: auto;
+    }
+}
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .nav-actions {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+        margin-left: 0;
+    }
+    .btn-black {
+        width: 100%;
+        text-align: center;
+    }
+    .nav-menu {
+        top: 140px;
+    }
+}
+
+/* === about hero === */
 .about-hero {
-    height: 800px; /* original */
+    height: 800px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -104,9 +175,8 @@ body {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
-
 .hero-left-content h1 {
-    font-family: "Ramaraja", serif;
+    font-family: "Rozha One", serif;
     font-size: 72px;
     color: #fff;
     margin: 0;
@@ -115,6 +185,7 @@ body {
     color: #fff;
     font-size: 18px;
     margin-top: 5px;
+    font-family: sans-serif;
 }
 @media (max-width: 768px) {
     .hero-left-content h1 {
@@ -131,7 +202,7 @@ body {
     }
 }
 
-/* === FIXED ALIGNMENT WRAPPER (original padding, made responsive) === */
+/* === fixed alignment wrapper === */
 .fixed-alignment-wrapper {
     width: 100%;
     padding: 80px 120px;
@@ -153,7 +224,7 @@ body {
 }
 
 .section-heading {
-    font-family: "Ramaraja", serif;
+    font-family: "Rozha One", serif;
     font-size: 47px;
     margin-bottom: 15px;
     color: #000;
@@ -174,10 +245,11 @@ body {
 }
 .intro-box h3 {
     font-size: 30px;
+    font-family: "Rozha One", serif;
 }
 .about-intro-section {
     margin-bottom: 500px;
-} /* original huge gap — kept exactly */
+}
 @media (max-width: 1024px) {
     .about-intro-section {
         margin-bottom: 300px;
@@ -201,9 +273,10 @@ body {
     color: #666;
     font-size: 14px;
     margin-bottom: 30px;
+    font-family: sans-serif;
 }
 
-/* === MISSION/VISION GRID (preserved 500px columns, made fluid) === */
+/* === mission/vision grid === */
 .mission-vision-grid {
     display: grid;
     justify-content: center;
@@ -257,7 +330,7 @@ body {
     margin-bottom: 10px;
 }
 .card-text h3 {
-    font-family: "Ramaraja", serif;
+    font-family: "Rozha One", serif;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -268,16 +341,17 @@ body {
     line-height: 1.4;
     color: #333;
     max-width: 90%;
+    font-family: sans-serif;
 }
 
-/* === GRID SECTIONS (member, farm, cert) === */
+/* === grid sections (member, farm, cert) === */
 .member-grid,
 .farm-grid,
 .cert-grid {
     display: grid;
     gap: 20px;
     margin-bottom: 60px;
-    padding-right: 40px; /* original */
+    padding-right: 40px;
 }
 @media (max-width: 768px) {
     .member-grid,
@@ -332,7 +406,7 @@ body {
     }
 }
 
-/* === INTEREST CTA (fully preserved) === */
+/* === interest cta === */
 .interest-cta {
     background-color: #fdfbe9;
     text-align: center;
@@ -359,12 +433,13 @@ body {
     text-transform: uppercase;
     margin-top: 30px;
     transition: 0.3s;
+    font-family: sans-serif;
 }
 .btn-black-caps:hover {
     background: #333;
 }
 
-/* === FOOTER (copied from home, untouched) === */
+/* === footer (consistent with home) === */
 .site-footer {
     background-color: #000;
     color: #fff;
@@ -379,7 +454,7 @@ body {
     align-items: start;
 }
 .footer-heading {
-    font-family: "Times New Roman", serif;
+    font-family: "Rozha One", serif;
     font-size: clamp(40px, 8vw, 64px);
     margin-bottom: 20px;
 }
@@ -389,6 +464,7 @@ body {
     margin-bottom: 30px;
     max-width: 350px;
     line-height: 1.5;
+    font-family: sans-serif;
 }
 .btn-footer-contact {
     display: inline-block;
@@ -405,7 +481,7 @@ body {
 }
 .footer-subheading {
     font-size: clamp(18px, 3vw, 22px);
-    font-family: "Times New Roman", serif;
+    font-family: "Rozha One", serif;
     margin-bottom: 25px;
     font-weight: bold;
 }
@@ -420,6 +496,7 @@ body {
     text-decoration: none;
     font-size: clamp(14px, 2vw, 16px);
     transition: color 0.3s;
+    font-family: sans-serif;
 }
 .footer-links a:hover {
     color: #e2ad1c;
@@ -440,6 +517,7 @@ body {
     line-height: 1.6;
     color: #fff;
     flex: 1;
+    font-family: sans-serif;
 }
 .footer-bottom {
     max-width: 1400px;
@@ -454,4 +532,5 @@ body {
 .footer-bottom p {
     font-size: clamp(11px, 2vw, 12px);
     color: #888;
+    font-family: sans-serif;
 }
