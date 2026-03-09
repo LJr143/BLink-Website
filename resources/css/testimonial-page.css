@@ -49,7 +49,7 @@ h3,
 .nav-menu a {
     text-decoration: none;
     color: #000000;
-    font-weight: 600;
+    font-weight: 601;
     font-size: clamp(13px, 2vw, 15px);
     white-space: nowrap;
 }
